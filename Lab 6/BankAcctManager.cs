@@ -1,3 +1,5 @@
+using System.Xml;
+
 namespace Lab_6
 {
     public partial class BankAcctManager : Form
@@ -25,23 +27,33 @@ namespace Lab_6
 
         private void submitBtn_Click(object sender, EventArgs e)
         {
-            decimal amount = Decimal.Parse(amtTxt.Text);
-
-            if (depositRadio.Checked)
+            try
             {
-                bankAccount.Deposit(amount);
+                if (IsValidData())
+                {
+                    decimal amount = Decimal.Parse(amtTxt.Text);
 
-            }
-            else if (withdrlRadio.Checked)
+                    if (depositRadio.Checked)
+                    {
+                        bankAccount.Deposit(amount);
+
+                    }
+                    else if (withdrlRadio.Checked)
+                    {
+                        bankAccount.Withdrawal(amount);
+
+                    }
+                    acctBlncTxt.Text = bankAccount.AccountBalance.ToString("C");
+                    amtTxt.Text = "";
+
+                    bankAccount.GetAccountStatus(bankAccount.AccountBalance);
+                    statusTxt.Text = bankAccount.statusMsg.ToString();
+                }
+            } catch (Exception ex)
             {
-                bankAccount.Withdrawal(amount);
-
+                MessageBox.Show(ex.Message, "Exception");
             }
-            acctBlncTxt.Text = bankAccount.AccountBalance.ToString("C");
-            amtTxt.Text = "";
-
-            bankAccount.GetAccountStatus(bankAccount.AccountBalance);
-            statusTxt.Text = bankAccount.statusMsg.ToString();
+            
 
         }
 
@@ -90,6 +102,43 @@ namespace Lab_6
             depositRadio.Checked = false;
             withdrlRadio.Checked = false;
             statusTxt.Text = "";
+        }
+
+        public bool IsValidData()
+        {
+            bool success = true;
+            string errorMsg = "";
+
+            //validate transaction amount
+            errorMsg += IsPresent(amtTxt.Text, "Transaction Amount");
+            errorMsg += IsDecimal(amtTxt.Text, "Transaction Amount");
+
+
+            if (errorMsg != "")
+            {
+                success = false;
+                MessageBox.Show(errorMsg, "Entry Error");
+            }
+            return success;
+        }
+
+        public static string IsPresent(string value, string name)
+        {
+            string msg = "";
+            if (value == "")
+            {
+                msg = name + " cannot be left empty.\n";
+            }
+            return msg;
+        }
+        public static string IsDecimal(string value, string name)
+        {
+            string msg = "";
+            if (!Decimal.TryParse(value, out _))
+            {
+                msg = name + " must be a valid decimal value.\n";
+            }
+            return msg;
         }
     }
 }
