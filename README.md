@@ -1,5 +1,5 @@
 # C-Sharp-Labs
-C# class assignments<br><br>
+<em>C# class assignments</em><br><br>
 Lab 7: Student Record Keeper with Database Connection<br>
 ![displayall_find](https://github.com/margoriordan/C-Sharp-Labs/assets/104601376/b7b278a9-b255-4881-b49d-afc1d226e528)<br>
 Find and display function<br><br>
