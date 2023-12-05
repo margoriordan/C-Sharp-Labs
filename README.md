@@ -1,9 +1,12 @@
 # C-Sharp-Labs
 C# class assignments<br><br>
 Lab 7: Student Record Keeper with Database Connection<br>
-![displayall_find](https://github.com/margoriordan/C-Sharp-Labs/assets/104601376/b7b278a9-b255-4881-b49d-afc1d226e528)<br><br>
-![Add](https://github.com/margoriordan/C-Sharp-Labs/assets/104601376/78f15efd-1db7-4312-949f-b0eaca136ae7)<br><br>
-![modify_delete](https://github.com/margoriordan/C-Sharp-Labs/assets/104601376/041b78a5-6776-4c87-bd69-2d8a8467786a)<br><br>
+![displayall_find](https://github.com/margoriordan/C-Sharp-Labs/assets/104601376/b7b278a9-b255-4881-b49d-afc1d226e528)<br>
+Find and display function<br><br>
+![Add](https://github.com/margoriordan/C-Sharp-Labs/assets/104601376/78f15efd-1db7-4312-949f-b0eaca136ae7)<br>
+Add function<br><br>
+![modify_delete](https://github.com/margoriordan/C-Sharp-Labs/assets/104601376/041b78a5-6776-4c87-bd69-2d8a8467786a)<br>
+Modify and deleve function<br><br>
 Lab 6: Bank Account Manager<br>
 ![Screen Recording 2023-11-21 at 11 09 44 AM](https://github.com/margoriordan/C-Sharp-Labs/assets/104601376/c2c70b17-f1cb-4047-af60-e42b9ca849d0)<br><br>
 Lab 5: Playfair Cipher<br>
